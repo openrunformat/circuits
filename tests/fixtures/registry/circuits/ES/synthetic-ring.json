@@ -1,0 +1,62 @@
+{
+  "uid": "01a19c89-ee4a-7051-a1b6-8b847d5e04bf",
+  "id": "ES-synthetic-ring",
+  "name": "Synthetic Ring",
+  "names": { "es": "Anillo sintético" },
+  "country": "ES",
+  "location": { "lat": 40.001, "lon": -3.0 },
+  "layouts": [
+    {
+      "id": "full",
+      "uid": "01a19c89-ee4a-79a7-8165-bcb9a7be6485",
+      "name": "Full",
+      "direction": "cw",
+      "versions": [
+        {
+          "id": "2019",
+          "from": "2019-01-01",
+          "to": "2023-04-01",
+          "length_m": 1200,
+          "start": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p1" },
+          "finish": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p1" }
+        },
+        {
+          "id": "2023-04",
+          "from": "2023-04-01",
+          "length_m": 1250,
+          "start": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p2" },
+          "finish": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p2" },
+          "splits": [
+            { "line": [40.002, -3.0, 40.002, -2.99986], "provenance": "p2" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "short",
+      "uid": "01a19c89-ee4a-7cd1-86cf-ac3e8e82b606",
+      "name": "Short",
+      "versions": [
+        {
+          "start": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p1" },
+          "finish": { "line": [40.0, -3.0, 40.0, -2.99986], "provenance": "p1" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q999999999", "scope": "circuit" }
+  ],
+  "provenance": [
+    { "id": "p1", "method": "measured-gps", "contributor": "example", "date": "2026-11-02" },
+    {
+      "id": "p2",
+      "method": "orthophoto",
+      "source": "Synthetic orthophoto",
+      "licence": "CC-BY-4.0",
+      "attribution": "Synthetic attribution",
+      "contributor": "example",
+      "date": "2026-11-02"
+    }
+  ]
+}

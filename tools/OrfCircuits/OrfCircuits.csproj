@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>orf-circuits</AssemblyName>
+    <RootNamespace>OrfCircuits</RootNamespace>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenRunFormat" Version="0.2.0" />
+    <PackageReference Include="JsonSchema.Net" Version="9.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="iso3166-alpha2.txt" LogicalName="iso3166-alpha2.txt" />
+    <Content Include="..\..\schema\*.json" Link="schema\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

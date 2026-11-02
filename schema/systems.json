@@ -1,0 +1,5 @@
+{
+  "systems": [
+    { "id": "wikidata", "name": "Wikidata", "pattern": "^Q[1-9][0-9]*$" }
+  ]
+}
