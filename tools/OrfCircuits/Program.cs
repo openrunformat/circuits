@@ -6,7 +6,7 @@ namespace OrfCircuits
 {
     internal static class Cli
     {
-        private const string Usage = "usage: orf-circuits validate [<root>]";
+        private const string Usage = "usage: orf-circuits validate [<root>] | uid";
 
         public static int Run(string[] args, TextWriter output, TextWriter error)
         {
@@ -28,6 +28,9 @@ namespace OrfCircuits
                     output.WriteLine($"OK: {RegistryLoader.Load(root, []).Count} circuits");
                     return 0;
                 }
+                case "uid" when args.Length == 1:
+                    output.WriteLine(Guid.CreateVersion7().ToString("D"));
+                    return 0;
                 default:
                     error.WriteLine(Usage);
                     return 2;

@@ -1,5 +1,4 @@
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using Json.Schema;
 
 namespace OrfCircuits;
@@ -26,6 +25,11 @@ public static class RegistryValidator
             CheckFileName(file, findings);
             wellFormed.Add(file);
         }
+
+        var systems = SemanticChecks.LoadSystems(root);
+        foreach (var file in wellFormed)
+            SemanticChecks.CheckFile(file, systems, findings);
+        SemanticChecks.CheckRegistry(wellFormed, findings);
 
         return findings
             .Distinct()
