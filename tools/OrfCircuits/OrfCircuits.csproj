@@ -10,6 +10,9 @@
     <PackageReference Include="JsonSchema.Net" Version="9.6.0" />
   </ItemGroup>
   <ItemGroup>
+    <InternalsVisibleTo Include="OrfCircuits.Tests" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="iso3166-alpha2.txt" LogicalName="iso3166-alpha2.txt" />
     <Content Include="..\..\schema\*.json" Link="schema\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

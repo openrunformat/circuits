@@ -16,20 +16,38 @@ internal static class SemanticChecks
 
     public sealed record ExternalSystem(string Id, Regex Pattern);
 
-    public static IReadOnlyDictionary<string, ExternalSystem> LoadSystems(string root)
+    /// <summary>
+    /// Reads schema/systems.json (the registry's own, or the tool's copy). Returns null and adds a "systems" finding
+    /// when the file cannot be used; external system checks are then skipped.
+    /// </summary>
+    public static IReadOnlyDictionary<string, ExternalSystem>? LoadSystems(string root, List<Finding> findings)
     {
         var path = Path.Combine(root, "schema", "systems.json");
         if (!File.Exists(path))
             path = Path.Combine(AppContext.BaseDirectory, "schema", "systems.json");
-        var json = JsonNode.Parse(File.ReadAllText(path))!;
-        return json["systems"]!.AsArray()
-            .Select(s => new ExternalSystem(s!["id"]!.GetValue<string>(),
-                new Regex(s["pattern"]!.GetValue<string>(), RegexOptions.CultureInvariant, TimeSpan.FromSeconds(1))))
-            .ToDictionary(s => s.Id, StringComparer.Ordinal);
+        try
+        {
+            var json = JsonNode.Parse(File.ReadAllText(path), documentOptions: new System.Text.Json.JsonDocumentOptions { AllowDuplicateProperties = false })!;
+            var result = new Dictionary<string, ExternalSystem>(StringComparer.Ordinal);
+            foreach (var s in json["systems"]!.AsArray())
+            {
+                var id = s!["id"]!.GetValue<string>();
+                var pattern = new Regex(s["pattern"]!.GetValue<string>(), RegexOptions.CultureInvariant, TimeSpan.FromSeconds(1));
+                if (!result.TryAdd(id, new ExternalSystem(id, pattern)))
+                    throw new FormatException($"System '{id}' is listed twice.");
+            }
+            return result;
+        }
+        catch (Exception ex) when (ex is System.Text.Json.JsonException or FormatException or ArgumentException
+                                       or InvalidOperationException or NullReferenceException)
+        {
+            findings.Add(new Finding("schema/systems.json", "", "systems", $"Cannot read the list of external id systems: {ex.Message}"));
+            return null;
+        }
     }
 
     /// <summary>Checks inside one file.</summary>
-    public static void CheckFile(CircuitFile file, IReadOnlyDictionary<string, ExternalSystem> systems, List<Finding> findings)
+    public static void CheckFile(CircuitFile file, IReadOnlyDictionary<string, ExternalSystem>? systems, List<Finding> findings)
     {
         var j = file.Json;
         void Add(string path, string code, string message) => findings.Add(new Finding(file.RelativePath, path, code, message));
@@ -209,7 +227,7 @@ internal static class SemanticChecks
         }
     }
 
-    private static void CheckExternal(JsonObject j, IReadOnlyDictionary<string, ExternalSystem> systems, Action<string, string, string> add)
+    private static void CheckExternal(JsonObject j, IReadOnlyDictionary<string, ExternalSystem>? systems, Action<string, string, string> add)
     {
         var layouts = Arr(j, "layouts").Select(l => l!.AsObject())
             .GroupBy(l => Str(l, "id")!, StringComparer.Ordinal)
@@ -221,7 +239,11 @@ internal static class SemanticChecks
             var ep = $"/external/{i}";
             var system = Str(e, "system")!;
             var eid = Str(e, "id")!;
-            if (!systems.TryGetValue(system, out var s))
+            if (systems is null)
+            {
+                // The systems list is broken; that is reported once, on schema/systems.json.
+            }
+            else if (!systems.TryGetValue(system, out var s))
                 add($"{ep}/system", "unknown-system", $"System '{system}' is not listed in schema/systems.json.");
             else if (!s.Pattern.IsMatch(eid))
                 add($"{ep}/id", "unknown-system", $"'{eid}' is not a valid {system} id.");

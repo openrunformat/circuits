@@ -36,7 +36,7 @@ public static class RegistryLoader
             try
             {
                 var text = StrictUtf8.GetString(bytes);
-                var node = JsonNode.Parse(text, documentOptions: new JsonDocumentOptions { AllowTrailingCommas = false, CommentHandling = JsonCommentHandling.Disallow });
+                var node = JsonNode.Parse(text, documentOptions: new JsonDocumentOptions { AllowTrailingCommas = false, CommentHandling = JsonCommentHandling.Disallow, AllowDuplicateProperties = false });
                 if (node is JsonObject obj)
                     result.Add(new CircuitFile(rel, obj));
                 else

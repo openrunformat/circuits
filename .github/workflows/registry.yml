@@ -24,14 +24,18 @@ jobs:
     needs: validate
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
+    # One index job at a time, always on the latest main: two merges close together cannot leave a stale index.
+    concurrency:
+      group: registry-index
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-        with: { fetch-depth: 0 }
+        with: { fetch-depth: 0, ref: main }
       - uses: actions/setup-dotnet@v4
         with: { global-json-file: global.json }
-      - run: dotnet run --project tools/OrfCircuits -c Release -- index . --generated-at "$(git log -1 --format=%cI -- circuits schema)"
+      - run: dotnet run --project tools/OrfCircuits -c Release -- index . --generated-at "$(git log -1 --first-parent --format=%cI -- circuits schema)"
       - name: Commit index if changed
         run: |
           git diff --quiet -- dist/ && exit 0

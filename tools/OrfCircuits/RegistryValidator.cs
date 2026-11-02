@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using Json.Schema;
 
 namespace OrfCircuits;
@@ -26,7 +27,7 @@ public static class RegistryValidator
             wellFormed.Add(file);
         }
 
-        var systems = SemanticChecks.LoadSystems(root);
+        var systems = SemanticChecks.LoadSystems(root, findings);
         foreach (var file in wellFormed)
             SemanticChecks.CheckFile(file, systems, findings);
         SemanticChecks.CheckRegistry(wellFormed, findings);
@@ -67,7 +68,12 @@ public static class RegistryValidator
         using var doc = JsonDocument.Parse(file.Json.ToJsonString());
         var evaluation = CircuitSchema.Value.Evaluate(doc.RootElement, new EvaluationOptions { OutputFormat = OutputFormat.List });
         if (evaluation.IsValid)
+        {
+            // .NET regular expressions let "$" match before a final "\n", so the schema patterns alone do not
+            // keep control characters out of ids, uids and dates.
+            CheckControlCharacters(file.RelativePath, file.Json, "", result);
             return result;
+        }
         foreach (var detail in evaluation.Details ?? [])
             if (detail.Errors is { Count: > 0 } errors)
                 foreach (var error in errors)
@@ -75,6 +81,30 @@ public static class RegistryValidator
         if (result.Count == 0)
             result.Add(new Finding(file.RelativePath, "", "schema", "Does not match schema/circuit.schema.json."));
         return result;
+    }
+
+    private static void CheckControlCharacters(string file, JsonNode? node, string path, List<Finding> result)
+    {
+        static bool HasControl(string s) => s.Any(char.IsControl);
+        switch (node)
+        {
+            case JsonObject o:
+                foreach (var (key, value) in o)
+                {
+                    var p = $"{path}/{key.Replace("~", "~0").Replace("/", "~1")}";
+                    if (HasControl(key))
+                        result.Add(new Finding(file, p, "schema", "Property names must not contain control characters."));
+                    CheckControlCharacters(file, value, p, result);
+                }
+                break;
+            case JsonArray a:
+                for (int i = 0; i < a.Count; i++)
+                    CheckControlCharacters(file, a[i], $"{path}/{i}", result);
+                break;
+            case JsonValue v when v.TryGetValue<string>(out var s) && HasControl(s):
+                result.Add(new Finding(file, path, "schema", "Text values must not contain control characters (line breaks, tabs...)."));
+                break;
+        }
     }
 
     private static void CheckFileName(CircuitFile file, List<Finding> findings)

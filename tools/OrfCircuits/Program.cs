@@ -20,6 +20,11 @@ namespace OrfCircuits
                 case "validate" when args.Length <= 2:
                 {
                     var root = args.Length == 2 ? args[1] : ".";
+                    if (!Directory.Exists(root))
+                    {
+                        error.WriteLine($"Registry folder not found: '{root}'.");
+                        return 2;
+                    }
                     var findings = RegistryValidator.Validate(root);
                     foreach (var f in findings)
                         output.WriteLine(f);
@@ -78,6 +83,11 @@ namespace OrfCircuits
                 return 2;
             }
 
+            if (!Directory.Exists(root))
+            {
+                error.WriteLine($"Registry folder not found: '{root}'.");
+                return 2;
+            }
             var findings = RegistryValidator.Validate(root);
             if (findings.Count > 0)
             {
