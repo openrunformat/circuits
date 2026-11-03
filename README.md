@@ -59,5 +59,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 - **Code** — `tools/` — is licensed under the Apache License 2.0 (see [`tools/LICENSE`](tools/LICENSE) and
   [`tools/NOTICE`](tools/NOTICE)).
 
-Some gates are measured on orthophotos published under CC BY 4.0; their attribution texts are listed in each
-circuit's `provenance` and in the `attribution` field of the index. Keep them when you redistribute the data.
+Some gates are measured on orthophotos published under CC BY 4.0 (for example, the national orthophoto of Spain,
+PNOA). Nothing from those images is copied into the registry: a contributor looks at the image and records a few
+coordinates (the two ends of a gate). The CC0-1.0 dedication covers the registry and those measured values. As a courtesy
+to the sources, and because CC BY 4.0 asks for it, each circuit names the orthophoto it was measured on in its
+`provenance`, and the index lists those texts in its `attribution` field. Keep them when you redistribute the data.
