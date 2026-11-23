@@ -1,0 +1,48 @@
+{
+  "uid": "01a20a9b-b25f-7231-a50c-a1996f6bfb27",
+  "id": "ES-ricardo-tormo",
+  "name": "Circuit Ricardo Tormo",
+  "names": { "ca": "Circuit Ricardo Tormo", "en": "Circuit Ricardo Tormo", "es": "Circuito Ricardo Tormo" },
+  "country": "ES",
+  "location": { "lat": 39.4865, "lon": -0.6305 },
+  "website": "https://www.circuitricardotormo.com",
+  "layouts": [
+    {
+      "id": "gp",
+      "uid": "01a20a9b-b29e-7414-a49c-e14b6e10d6e8",
+      "name": "Grand Prix",
+      "direction": "ccw",
+      "versions": [
+        {
+          "length_m": 4005,
+          "start": { "line": [39.483591, -0.631107, 39.483502, -0.631023], "provenance": "pnoa-2024" },
+          "finish": { "line": [39.483591, -0.631107, 39.483502, -0.631023], "provenance": "pnoa-2024" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q786577", "scope": "circuit" }
+  ],
+  "provenance": [
+    {
+      "id": "pnoa-2024",
+      "method": "orthophoto",
+      "source": "PNOA, Instituto Geográfico Nacional (orthophoto of May 2024, 25 cm)",
+      "url": "https://pnoa.ign.es",
+      "licence": "CC-BY-4.0",
+      "attribution": "CC BY 4.0 scne.es",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Ends of the chequered finish line across the main straight, at the start of the pit buildings, from the left edge line to the pit wall side, looking north-east in the direction of travel. The start gantry and grid are further along the straight; the gate is the finish line, used for lap timing. Checked against GPS laps of this layout recorded in 2025: a flying lap crosses it once at each end, and the logged lap boundaries fall within one GPS fix of the line."
+    },
+    {
+      "id": "official-length",
+      "method": "official",
+      "url": "https://www.comunitatvalenciana.com/es/valencia/cheste/parques-de-ocio/circuit-ricardo-tormo",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Regional tourism board of the Generalitat Valenciana: main layout 4,005 m, main straight 876 m, 14 turns. The circuit opened on 19 September 1999 (https://www.circuitricardotormo.com/circuito/) and publishes no layout changes, so the layout has a single version."
+    }
+  ]
+}
