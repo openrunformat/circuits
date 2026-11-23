@@ -1,7 +1,83 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-02T13:59:58Z",
+  "generatedAt": "2026-11-23T22:05:41Z",
   "source": "https://github.com/openrunformat/circuits",
   "licence": "CC0-1.0",
-  "circuits": []
+  "circuits": [
+    {
+      "id": "ES-navarra",
+      "uid": "01a20a4b-e84d-7f45-9cfc-22301fb93126",
+      "aliases": [],
+      "name": "Circuito de Navarra",
+      "names": {
+        "en": "Circuito de Navarra",
+        "es": "Circuito de Navarra"
+      },
+      "country": "ES",
+      "location": {
+        "lat": 42.5603,
+        "lon": -2.1655
+      },
+      "website": "https://www.circuitodenavarra.com",
+      "layouts": [
+        {
+          "id": "full",
+          "uid": "01a20a4b-e857-77a4-9c6a-8f081884f487",
+          "name": "Full circuit",
+          "direction": "cw",
+          "versions": [
+            {
+              "id": "2010",
+              "from": "2010-06-01",
+              "to": "2024-09-01",
+              "length_m": 3900,
+              "start": [
+                42.559185,
+                -2.168163,
+                42.559235,
+                -2.167996
+              ],
+              "finish": [
+                42.559185,
+                -2.168163,
+                42.559235,
+                -2.167996
+              ],
+              "splits": []
+            },
+            {
+              "id": "2024-09",
+              "from": "2024-09-01",
+              "to": null,
+              "length_m": 4300,
+              "start": [
+                42.559190,
+                -2.168165,
+                42.559241,
+                -2.167997
+              ],
+              "finish": [
+                42.559190,
+                -2.168165,
+                42.559241,
+                -2.167997
+              ],
+              "splits": []
+            }
+          ]
+        }
+      ],
+      "external": [
+        {
+          "system": "wikidata",
+          "id": "Q1092902",
+          "scope": "circuit"
+        }
+      ],
+      "attribution": [
+        "CC BY 4.0 scne.es",
+        "Información geográfica propiedad del Gobierno de Navarra."
+      ]
+    }
+  ]
 }
