@@ -1,0 +1,77 @@
+{
+  "uid": "01a20a4b-e84d-7f45-9cfc-22301fb93126",
+  "id": "ES-navarra",
+  "name": "Circuito de Navarra",
+  "names": { "en": "Circuito de Navarra", "es": "Circuito de Navarra" },
+  "country": "ES",
+  "location": { "lat": 42.5603, "lon": -2.1655 },
+  "website": "https://www.circuitodenavarra.com",
+  "layouts": [
+    {
+      "id": "full",
+      "uid": "01a20a4b-e857-77a4-9c6a-8f081884f487",
+      "name": "Full circuit",
+      "direction": "cw",
+      "versions": [
+        {
+          "id": "2010",
+          "from": "2010-06-01",
+          "to": "2024-09-01",
+          "length_m": 3900,
+          "start": { "line": [42.559185, -2.168163, 42.559235, -2.167996], "provenance": "pnoa-2023" },
+          "finish": { "line": [42.559185, -2.168163, 42.559235, -2.167996], "provenance": "pnoa-2023" }
+        },
+        {
+          "id": "2024-09",
+          "from": "2024-09-01",
+          "length_m": 4300,
+          "start": { "line": [42.559190, -2.168165, 42.559241, -2.167997], "provenance": "navarra-2025" },
+          "finish": { "line": [42.559190, -2.168165, 42.559241, -2.167997], "provenance": "navarra-2025" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q1092902", "scope": "circuit" }
+  ],
+  "provenance": [
+    {
+      "id": "pnoa-2023",
+      "method": "orthophoto",
+      "source": "PNOA, Instituto Geográfico Nacional (orthophoto of August 2023, 25 cm)",
+      "url": "https://pnoa.ign.es",
+      "licence": "CC-BY-4.0",
+      "attribution": "CC BY 4.0 scne.es",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Gate of the layout before the 2024 extension: ends of the painted chequered line under the gantry, from the left edge line to the pit wall line. Checked against GPS laps of that layout: every lap crosses it once, heading north-north-west on the main straight."
+    },
+    {
+      "id": "navarra-2025",
+      "method": "orthophoto",
+      "source": "Gobierno de Navarra, Ortofoto color 2025 (25 cm, flown July to October 2025)",
+      "url": "https://idena.navarra.es/metadata/spaSITNAortofoto_5000_2025.xml",
+      "licence": "CC-BY-4.0",
+      "attribution": "Información geográfica propiedad del Gobierno de Navarra.",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Gate of the current layout: ends of the painted chequered line under the gantry, from the left edge line to the pit wall line (same place as before the extension). Checked against GPS laps of this layout: every lap crosses it once, heading north-north-west on the main straight."
+    },
+    {
+      "id": "official-circuit",
+      "method": "official",
+      "url": "https://www.circuitodenavarra.com/circuit",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "The circuit opened in June 2010. The 2024 redevelopment extended the 3.9 km layout to 4.3 km with a 650 m extension (new turns 11 to 14); the new layout opened in September 2024. Only the month is published, so versions change on the first day of the month. Lengths are the rounded official figures."
+    },
+    {
+      "id": "official-redevelopment",
+      "method": "official",
+      "url": "https://www.circuitodenavarra.com/about/redevelopment",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Phase 2 of the works ran from July to the first week of September 2024; the lap grew by 379 m. Phase 1 (January to March 2024) resurfaced the track and re-profiled turn 6 without moving the start and finish line."
+    }
+  ]
+}
