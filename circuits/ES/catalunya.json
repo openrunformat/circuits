@@ -1,0 +1,58 @@
+{
+  "uid": "01a20a9b-b1da-7978-b909-392f27d41c85",
+  "id": "ES-catalunya",
+  "name": "Circuit de Barcelona-Catalunya",
+  "names": { "ca": "Circuit de Barcelona-Catalunya", "en": "Circuit de Barcelona-Catalunya", "es": "Circuit de Barcelona-Catalunya" },
+  "country": "ES",
+  "location": { "lat": 41.5700, "lon": 2.2590 },
+  "website": "https://www.circuitcat.com",
+  "layouts": [
+    {
+      "id": "gp",
+      "uid": "01a20a9b-b222-7de8-b78a-298d4bb16106",
+      "name": "Grand Prix",
+      "direction": "cw",
+      "versions": [
+        {
+          "id": "2023",
+          "from": "2023-02-27",
+          "length_m": 4657,
+          "start": { "line": [41.569980, 2.261286, 41.570045, 2.261150], "provenance": "icgc-2022" },
+          "finish": { "line": [41.569980, 2.261286, 41.570045, 2.261150], "provenance": "icgc-2022" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q171404", "scope": "circuit" }
+  ],
+  "provenance": [
+    {
+      "id": "icgc-2022",
+      "method": "orthophoto",
+      "source": "Institut Cartogràfic i Geològic de Catalunya, territorial orthophoto of Catalonia 2022 (25 cm, flown 11 May 2022)",
+      "url": "https://www.icgc.cat/en/Geoinformation-and-Maps/Data-and-products/Image/Territorial-Orthophoto",
+      "licence": "CC-BY-4.0",
+      "attribution": "Orthophoto of Catalonia 1:5.000 of the Institut Cartogràfic i Geològic de Catalunya (ICGC), under a CC BY 4.0 license",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Ends of the painted line across the main straight at the head of the grid, from the asphalt edge on the grandstand side to the pit wall, looking south-west in the direction of travel. Measured on the 2022 flight because the main straight is in shadow in later flights; the line is in the same place on the 2025 orthophoto. Checked against GPS laps of this layout recorded in 2025: every lap crosses it once, on the line or up to 6 m past the grandstand-side edge (offset of the traces), and the time between crossings matches the logged lap times to 0.01 s; passes through the pit lane do not cross it."
+    },
+    {
+      "id": "official-circuit",
+      "method": "official",
+      "url": "https://www.circuitcat.com/es/quienes-somos/",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "The circuit opened on 10 September 1991; the official length of the track is 4.657 km."
+    },
+    {
+      "id": "fia-2023",
+      "method": "official",
+      "url": "https://www.fia.com/news/fia-homologates-updated-layout-2023-fia-formula-1-spanish-grand-prix",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Published on 27 February 2023: the FIA homologated the Grand Prix layout with and without the chicane in the final sector, and the chicane is not used from 2023. This version is the layout without the chicane from that date. Earlier layouts (with the chicane, and the original one of 1991) are not included yet."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "uid": "01a20a9b-b0e7-793d-9a35-ddfe16572c92",
+  "id": "ES-jarama",
+  "name": "Circuito del Jarama",
+  "names": { "en": "Jarama Circuit", "es": "Circuito del Jarama" },
+  "country": "ES",
+  "location": { "lat": 40.6172, "lon": -3.5857 },
+  "website": "https://www.jarama.org",
+  "layouts": [
+    {
+      "id": "full",
+      "uid": "01a20a9b-b123-7dfe-89b0-734e93524586",
+      "name": "Full circuit",
+      "direction": "cw",
+      "versions": [
+        {
+          "length_m": 3850,
+          "start": { "line": [40.617139, -3.584127, 40.617109, -3.584255], "provenance": "pnoa-2023" },
+          "finish": { "line": [40.617139, -3.584127, 40.617109, -3.584255], "provenance": "pnoa-2023" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q172897", "scope": "circuit" }
+  ],
+  "provenance": [
+    {
+      "id": "pnoa-2023",
+      "method": "orthophoto",
+      "source": "PNOA, Instituto Geográfico Nacional (orthophoto of July 2023, 25 cm)",
+      "url": "https://pnoa.ign.es",
+      "licence": "CC-BY-4.0",
+      "attribution": "CC BY 4.0 scne.es",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Ends of the painted line across the main straight, in front of the control tower, from the left edge line to the pit wall side, looking south-south-east in the direction of travel. Checked against GPS laps: every lap crosses it once, heading south-south-east; passes through the pit lane do not."
+    },
+    {
+      "id": "official-layout",
+      "method": "official",
+      "url": "https://www.jarama.org/el-circuito/trazado-del-circuito",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Official length 3,850 m. The circuit does not publish dates for earlier layouts (the original track was shorter), so the layout has a single version; the 2015 to 2021 works renewed the buildings and resurfaced the track without changing the layout."
+    }
+  ]
+}

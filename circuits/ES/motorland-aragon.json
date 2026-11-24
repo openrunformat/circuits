@@ -1,0 +1,48 @@
+{
+  "uid": "01a20a9b-b15a-77a3-80d7-3dececf82235",
+  "id": "ES-motorland-aragon",
+  "name": "MotorLand Aragón",
+  "names": { "en": "MotorLand Aragón", "es": "MotorLand Aragón" },
+  "country": "ES",
+  "location": { "lat": 41.0790, "lon": -0.2050 },
+  "website": "https://www.motorlandaragon.com",
+  "layouts": [
+    {
+      "id": "gp-fim",
+      "uid": "01a20a9b-b19b-73f1-85c9-051a6446b2d8",
+      "name": "Grand Prix FIM",
+      "direction": "ccw",
+      "versions": [
+        {
+          "length_m": 5077,
+          "start": { "line": [41.078234, -0.197866, 41.078334, -0.197757], "provenance": "pnoa-2024" },
+          "finish": { "line": [41.078234, -0.197866, 41.078334, -0.197757], "provenance": "pnoa-2024" }
+        }
+      ]
+    }
+  ],
+  "external": [
+    { "system": "wikidata", "id": "Q1321650", "scope": "circuit" }
+  ],
+  "provenance": [
+    {
+      "id": "pnoa-2024",
+      "method": "orthophoto",
+      "source": "PNOA, Instituto Geográfico Nacional (orthophoto of August 2024, 25 cm)",
+      "url": "https://pnoa.ign.es",
+      "licence": "CC-BY-4.0",
+      "attribution": "CC BY 4.0 scne.es",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Ends of the painted line across the main straight, just past the start gantry, from the pit wall side to the outer kerb, looking north-west in the direction of travel. Checked against GPS laps of this layout: every lap crosses it once and the fastest lap between crossings matches the logged best lap to 0.01 s; those traces run up to 15 m off the outer edge on this straight, so the check used the same line extended across the run-off."
+    },
+    {
+      "id": "official-layouts",
+      "method": "official",
+      "url": "https://www.motorlandaragon.com/es/circuito-de-velocidad/ficha-tecnica-velocidad",
+      "contributor": "Open Run Format maintainers",
+      "date": "2026-11-23",
+      "notes": "Official figures: Grand Prix FIM layout 5,077 m, 16 turns, anticlockwise. The circuit also publishes the Grand Prix FIA layout (5,345 m) and the national layouts (2,626 m); they are not included yet because their gates have not been checked."
+    }
+  ]
+}
