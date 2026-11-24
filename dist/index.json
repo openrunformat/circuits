@@ -1,9 +1,175 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-23T22:05:41Z",
+  "generatedAt": "2026-11-24T03:25:32Z",
   "source": "https://github.com/openrunformat/circuits",
   "licence": "CC0-1.0",
   "circuits": [
+    {
+      "id": "ES-catalunya",
+      "uid": "01a20a9b-b1da-7978-b909-392f27d41c85",
+      "aliases": [],
+      "name": "Circuit de Barcelona-Catalunya",
+      "names": {
+        "ca": "Circuit de Barcelona-Catalunya",
+        "en": "Circuit de Barcelona-Catalunya",
+        "es": "Circuit de Barcelona-Catalunya"
+      },
+      "country": "ES",
+      "location": {
+        "lat": 41.5700,
+        "lon": 2.2590
+      },
+      "website": "https://www.circuitcat.com",
+      "layouts": [
+        {
+          "id": "gp",
+          "uid": "01a20a9b-b222-7de8-b78a-298d4bb16106",
+          "name": "Grand Prix",
+          "direction": "cw",
+          "versions": [
+            {
+              "id": "2023",
+              "from": "2023-02-27",
+              "to": null,
+              "length_m": 4657,
+              "start": [
+                41.569980,
+                2.261286,
+                41.570045,
+                2.261150
+              ],
+              "finish": [
+                41.569980,
+                2.261286,
+                41.570045,
+                2.261150
+              ],
+              "splits": []
+            }
+          ]
+        }
+      ],
+      "external": [
+        {
+          "system": "wikidata",
+          "id": "Q171404",
+          "scope": "circuit"
+        }
+      ],
+      "attribution": [
+        "Orthophoto of Catalonia 1:5.000 of the Institut Cartogràfic i Geològic de Catalunya (ICGC), under a CC BY 4.0 license"
+      ]
+    },
+    {
+      "id": "ES-jarama",
+      "uid": "01a20a9b-b0e7-793d-9a35-ddfe16572c92",
+      "aliases": [],
+      "name": "Circuito del Jarama",
+      "names": {
+        "en": "Jarama Circuit",
+        "es": "Circuito del Jarama"
+      },
+      "country": "ES",
+      "location": {
+        "lat": 40.6172,
+        "lon": -3.5857
+      },
+      "website": "https://www.jarama.org",
+      "layouts": [
+        {
+          "id": "full",
+          "uid": "01a20a9b-b123-7dfe-89b0-734e93524586",
+          "name": "Full circuit",
+          "direction": "cw",
+          "versions": [
+            {
+              "id": null,
+              "from": null,
+              "to": null,
+              "length_m": 3850,
+              "start": [
+                40.617139,
+                -3.584127,
+                40.617109,
+                -3.584255
+              ],
+              "finish": [
+                40.617139,
+                -3.584127,
+                40.617109,
+                -3.584255
+              ],
+              "splits": []
+            }
+          ]
+        }
+      ],
+      "external": [
+        {
+          "system": "wikidata",
+          "id": "Q172897",
+          "scope": "circuit"
+        }
+      ],
+      "attribution": [
+        "CC BY 4.0 scne.es"
+      ]
+    },
+    {
+      "id": "ES-motorland-aragon",
+      "uid": "01a20a9b-b15a-77a3-80d7-3dececf82235",
+      "aliases": [],
+      "name": "MotorLand Aragón",
+      "names": {
+        "en": "MotorLand Aragón",
+        "es": "MotorLand Aragón"
+      },
+      "country": "ES",
+      "location": {
+        "lat": 41.0790,
+        "lon": -0.2050
+      },
+      "website": "https://www.motorlandaragon.com",
+      "layouts": [
+        {
+          "id": "gp-fim",
+          "uid": "01a20a9b-b19b-73f1-85c9-051a6446b2d8",
+          "name": "Grand Prix FIM",
+          "direction": "ccw",
+          "versions": [
+            {
+              "id": null,
+              "from": null,
+              "to": null,
+              "length_m": 5077,
+              "start": [
+                41.078234,
+                -0.197866,
+                41.078334,
+                -0.197757
+              ],
+              "finish": [
+                41.078234,
+                -0.197866,
+                41.078334,
+                -0.197757
+              ],
+              "splits": []
+            }
+          ]
+        }
+      ],
+      "external": [
+        {
+          "system": "wikidata",
+          "id": "Q1321650",
+          "scope": "circuit"
+        }
+      ],
+      "attribution": [
+        "CC BY 4.0 scne.es"
+      ]
+    },
     {
       "id": "ES-navarra",
       "uid": "01a20a4b-e84d-7f45-9cfc-22301fb93126",
@@ -77,6 +243,62 @@
       "attribution": [
         "CC BY 4.0 scne.es",
         "Información geográfica propiedad del Gobierno de Navarra."
+      ]
+    },
+    {
+      "id": "ES-ricardo-tormo",
+      "uid": "01a20a9b-b25f-7231-a50c-a1996f6bfb27",
+      "aliases": [],
+      "name": "Circuit Ricardo Tormo",
+      "names": {
+        "ca": "Circuit Ricardo Tormo",
+        "en": "Circuit Ricardo Tormo",
+        "es": "Circuito Ricardo Tormo"
+      },
+      "country": "ES",
+      "location": {
+        "lat": 39.4865,
+        "lon": -0.6305
+      },
+      "website": "https://www.circuitricardotormo.com",
+      "layouts": [
+        {
+          "id": "gp",
+          "uid": "01a20a9b-b29e-7414-a49c-e14b6e10d6e8",
+          "name": "Grand Prix",
+          "direction": "ccw",
+          "versions": [
+            {
+              "id": null,
+              "from": null,
+              "to": null,
+              "length_m": 4005,
+              "start": [
+                39.483591,
+                -0.631107,
+                39.483502,
+                -0.631023
+              ],
+              "finish": [
+                39.483591,
+                -0.631107,
+                39.483502,
+                -0.631023
+              ],
+              "splits": []
+            }
+          ]
+        }
+      ],
+      "external": [
+        {
+          "system": "wikidata",
+          "id": "Q786577",
+          "scope": "circuit"
+        }
+      ],
+      "attribution": [
+        "CC BY 4.0 scne.es"
       ]
     }
   ]
